@@ -1,0 +1,21 @@
+<% layout('layouts/boilerplate') -%>
+
+<h1 class="m-3 mb-5 text-center">
+    All Articles From <%= foundArticle.user.username %> 
+</h1>
+
+<div class="d-flex flex-wrap justify-content-center">
+    <% for(let article of articles) {%>
+    
+      <div class="card m-1 text-center" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><%= article.title %> </h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= article.description %> </h6>
+          <p class="card-text"><%= stripTags(article.body).substring(0, 15) %>...</p>
+          <p><%= article.createdOn.toLocaleDateString() %> </p>
+        </div>
+      </div>
+  
+  <% } %> 
+  
+  </div>

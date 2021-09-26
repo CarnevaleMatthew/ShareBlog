@@ -1,0 +1,35 @@
+<% layout('layouts/boilerplate') -%> 
+
+<h1 class="text-center mb-5">New Article</h1>
+
+
+<form action="/articles" method="POST" class="needs-validation" novalidate>
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title:</label>
+                <input type="text" class="form-control" id="title" name="article[title]" required autocomplete="off">
+              </div>
+              <div class="mb-3">
+                <label for="image" class="form-label">Image:</label>
+                <input type="text" class="form-control" id="image" name="article[image]" required autocomplete="off">
+              </div>
+              <div class="mb-3">
+                <label for="description" class="form-label">Your description:</label>
+                <textarea class="form-control" id="description" name="article[description]" rows="2" required></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="editor" class="form-label">Your Entry:</label>
+            
+           
+                    <textarea class="form-control" id="editor" name="article[body]" rows="15" required></textarea>
+          
+         
+                
+              </div>
+              <button class="btn btn-outline-primary mb-3" type="submit">Add Article</button>
+        </div>
+    </div>
+</form>
+
+

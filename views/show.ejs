@@ -1,0 +1,23 @@
+<% layout('layouts/boilerplate') -%>
+
+<h1 class="text-center">Info Page</h1>
+<h2 class="text-center"><%= article.title %> - written by: <a href="/articles/user/<%= article.user._id %>"><%= name %></a></h2>
+
+<div class="row">
+
+        <div class="col-5 my-5">
+            <img src="<%= article.image %> " class="img-fluid" alt="...">
+        </div>
+        <div class="col-7 my-5">
+            <%= stripTags(article.body) %> 
+        </div>
+        <div class="d-flex justify-content-between align-middle">
+            <a href="/articles"><button class="btn btn-outline-info my-3">Return</button></a>
+            <a href="/articles/<%= article.slug %>/edit"><button class="btn btn-outline-success">Edit</button></a>
+            <form action="/articles/<%= article.id %>?_method=DELETE" method="POST">
+                <button type="submit" class="btn btn-outline-danger my-3">Delete</button>
+            </form>
+        </div>
+
+ 
+</div>
