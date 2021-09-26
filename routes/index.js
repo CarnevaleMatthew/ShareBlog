@@ -6,6 +6,12 @@ const User = require("../models/User");
 const Article = require('../models/Article')
 const {checkAuth} = require('../middleware/auth')
 
+// @description   Landing Page
+// @route         GET /
+router.get('/', (req, res) => {
+  res.render('landing')
+});
+
 // @description   Home Page
 // @route         GET /home
 router.get('/mypage', checkAuth, async(req, res) => {
