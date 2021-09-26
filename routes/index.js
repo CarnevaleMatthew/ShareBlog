@@ -9,7 +9,7 @@ const {checkAuth} = require('../middleware/auth')
 // @description   Landing Page
 // @route         GET /
 router.get('/', (req, res) => {
-  res.render('landing')
+  res.redirect('/articles')
 });
 
 // @description   Home Page
